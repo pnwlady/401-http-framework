@@ -11,21 +11,6 @@ httpframe.post('/test', (req, res) => {
   res.wrend(JSON.stringify({'msg': 'post test'}));
 });
 
-httpframe.put('/test', (req, res) => {
-  res.writeHead(200, {'Content-Type': 'application/json'});
-  res.wrend(JSON.stringify({'msg': 'put test'}));
-});
-
-httpframe.patch('/test', (req. res) => {
-  res.writeHead(200, {'Content-Type': 'application/json'});
-  res.wrend(JSON.stringify({'msg': 'patch test'}));
-});
-
-httpframe.delete('/test', (req, res) => {
-  res.writeHead(200, {'Content-Type': 'application/json'});
-  res.wrend(JSON.stringify({'msg': 'delete test'}));
-});
-
 httpframe.post('/', (req, res) => {
   httpframe.data(req (data) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
