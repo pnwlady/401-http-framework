@@ -39,25 +39,6 @@ describe('REST functionality', function () {
       });
   });
 
-  it('should PUT', (done) => {
-    request(origin)
-      .put('/test')
-      .end((err, res) => {
-        expect(err).to.eql(null);
-        expect(res.body.msg).to.eql('put test');
-        done();
-      });
-  });
-
-  it('should PATCH', (done) => {
-    request(origin)
-      .patch('/test')
-      .end((err, res) => {
-        expect(err).to.eql(null);
-        expect(res.body.msg).to.eql('delete test');
-        done();
-      });
-  });
 });
 
 describe('server test', () => {
