@@ -1,0 +1,38 @@
+{
+  "name": "401-http-framework",
+  "version": "1.0.0",
+  "description": "401 assignment for creating a http server framework",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnwlady/401-http-framework.git"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "put",
+    "post",
+    "get",
+    "patch",
+    "router"
+  ],
+  "author": "Heidi Laursen, Tim Forman & Ali Forman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnwlady/401-http-framework/issues"
+  },
+  "homepage": "https://github.com/pnwlady/401-http-framework#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
