@@ -1,3 +1,4 @@
+const mocha =require('mocha').describe;
 const server = require(__dirname + '/test-server');
 const contentHead = require(__dirname + '/../lib/content-type');
 const expect = require('chai').expect;
@@ -5,9 +6,19 @@ const request = require('chai-http').request;
 
 var origin = 'localhost:3000'
 
-// chai.use(chaiHttp);
-// const expect = chai.expect;
-// const request = chai.request;
+// import mocha from 'mocha';
+//     mocha.describe();
+import { expect } from 'chai';
+
+// import chai from 'chai';
+//   chai.expect();
+
+import chai-http from 'chai-http';
+    chai-http.request();
+
+chai.use(chaiHttp);
+const expect = chai.expect;
+const request = chai.request;
 
 describe('REST functionality', function () {
   it('should respond to 404 error with GET request unknown route', (done) => {
