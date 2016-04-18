@@ -5,6 +5,7 @@ var Router = require(__dirname _ '/../lib/router');
 
 
 var origin = 'localhost:3000'
+//is this necessary? 
 const contentHead = require(__dirname + '/../lib/content-type');
 
 // import mocha from 'mocha';
