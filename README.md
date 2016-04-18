@@ -1,6 +1,6 @@
 # waka-flocka-frame
 
-<strong>Waka Flocka Frame HTTP Framework</strong>
+<h2>Waka Flocka Frame HTTP Framework</h2>
 
 A simple http framework to take mundane out of the mundane. Quickly create a basic http server with essential router functions by typing just a few lines of code.
 
@@ -16,24 +16,24 @@ A simple http framework to take mundane out of the mundane. Quickly create a bas
  <li>Automatic Content-Type Detection for Headers</li>
 </ul>
 
-<h2>How to use the WFF framework</h2>
--------------
-<h3>Installation</h3>
--------------
-<h4>Initialize your local repository</h4>
-  ```npm init```
+<h2>Installation</h2>
+---------------------
+<h2>Initialize your local repository</h2>
+  ```
+  npm init
+  ```
 
-<h4>Install WFF</h4>
+<h2>Install WFF</h2>
 ```
 npm install --save waka-flocka-frame
 ```
 
-<h4>Then require ('waka-flocka-frame') in your project.</h4>
+<h2>Then require ('waka-flocka-frame') in your project.</h2>
 
-```var wff = require('waka-flocka-frame')```
+```var wff = require('waka-flocka-frame');```
 
 --------------------
-Code to quickly set up a http server
+<h2>Code to quickly set up a http server</h2>
 ```
 var wff = require('waka-flocka-frame');
 
@@ -41,7 +41,7 @@ wff.server.listen([optional port number]);
 ```
 Leaving out the port number will invoke the default port 3000.
 
-<h3>Code to quickly set up a simple route.</h3>
+<h2>Code to quickly set up a simple route.</h2>
 ```
 wff.router.get('/home', 'a text string');
 ```
@@ -53,13 +53,13 @@ Syntax:
 If you want a response other than plain text you MUST use a callback
 and response.writeHead.
 ```
-wff.router.get('/home', function(){
-    res.writeHead(200, {'Content-Type': 'application/json');
+wff.router.get('/home', function(req, res){
+    res.writeHead(200, {'Content-Type': 'application/json'});
     res.write(JSON.stringify({"msg": "my message"}));
     res.end();
   });
 ```
-<h3>Code to quickly set up a static route.</h3>
+<h2>Code to quickly set up a static route.</h2>
 ```
 wff.router.getStatic('someFolder/someText.txt', '/test');
 ```
@@ -70,7 +70,7 @@ wff.router.getStatic('[your file path]', '[your route]');
 ```
 Parameters are a path to a resource and a route.
 
-<h3>Code to quickly set up a POST route without a callback.</h3>
+<h2>Code to quickly set up a POST route without a callback.</h2>
 ```
 wff.router.post('/myBlog');
 ```
@@ -81,7 +81,7 @@ wff.router.post('[url you are posting to]');
 ```
 Parameter is the route you are posting to.
 
-<h3>Example of a POST route with an optional callback.</h3>
+<h2>Example of a POST route with an optional callback.</h2>
 ```
 wff.router.post('/postUrl', function(req, res) {
   res.writeHead(200, { 'Content-Type': 'application/json' });
