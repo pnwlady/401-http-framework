@@ -1,10 +1,11 @@
-const mocha =require('mocha').describe;
-const server = require(__dirname + '/test-server');
-const contentHead = require(__dirname + '/../lib/content-type');
 const expect = require('chai').expect;
 const request = require('chai-http').request;
+const fs = require('fs');
+var Router = require(__dirname _ '/../lib/router');
+
 
 var origin = 'localhost:3000'
+const contentHead = require(__dirname + '/../lib/content-type');
 
 // import mocha from 'mocha';
 //     mocha.describe();
