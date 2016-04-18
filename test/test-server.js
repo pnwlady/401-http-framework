@@ -2,19 +2,21 @@ const httpframe = require(__dirname + '/../index');
 
 httpframe.get('/test', (req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
-  //res.write & res.end() shortcut with res.wrend
-  res.wrend(JSON.stringify({'msg': 'get test'}));
+  res.write(JSON.stringify({'msg': 'get test'}));
+  res.end();
 });
 
 httpframe.post('/test', (req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
-  res.wrend(JSON.stringify({'msg': 'post test'}));
+  res.write(JSON.stringify({'msg': 'post test'}));
+  res.end();
 });
 
 httpframe.post('/', (req, res) => {
-  httpframe.data(req (data) => {
+  httpframe.data(req, (data) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.wrend(data);
+    res.write(data);
+    res.end();
   });
 });
 

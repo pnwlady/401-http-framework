@@ -1,27 +1,28 @@
-// const test-server = require(__dirname + '/test-server');
+const server = require(__dirname + '/test-server');
 const contentHead = require(__dirname + '/../lib/content-type');
-const chai = require('chai').expect;
-const chaiHttp = require('chai-http').request;
+const expect = require('chai').expect;
+const request = require('chai-http').request;
+
+var origin = 'localhost:3000'
 
 // chai.use(chaiHttp);
-const expect = chai.expect;
-const request = chai.request;
+// const expect = chai.expect;
+// const request = chai.request;
 
 describe('REST functionality', function () {
   it('should respond to 404 error with GET request unknown route', (done) => {
-    request(origin)
+    chai(origin)
       .get('/doesnotexist')
       .end((err, req) => {
         expect(err).to.eql(null);
         expect(res).to.have.status(404);
         expect(res.body.msg).to.eql('Page not found');
-        debugger;
         done();
       });
   });
 
   it('should GET', (done) => {
-    request(origin)
+    chai(origin)
       .get('/test')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -31,7 +32,7 @@ describe('REST functionality', function () {
   });
 
   it('should POST', (done) => {
-    request(origin)
+    chai(origin)
       .post('/test')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -49,7 +50,7 @@ describe('server test', () => {
 
   //write get and post tests with correct exportObj.data function from fileTypes
   it('should GET and read files with exportObj.view function', (done) => {
-    request(origin)
+    chai(origin)
       .get('/filePath')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -59,7 +60,7 @@ describe('server test', () => {
   });
 
   it('should POST request data with exportObj.data function', (done) => {
-    request(origin)
+    chai(origin)
       .post('/')
       .send('we are data')
       .end((err, res) => {
