@@ -1,20 +1,21 @@
-const = require(__dirname + '/test-server');
-const = contentHead(__dirname + '/../lib/fileTypes');
+// const test-server = require(__dirname + '/test-server');
+const contentHead = require(__dirname + '/../lib/content-type');
 const chai = require('chai').expect;
 const chaiHttp = require('chai-http').request;
 
-chai.use(chaiHttp);
+// chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
 
 describe('REST functionality', function () {
-  it('should reqpond to 404 error with GET request unknown route', (done) => {
+  it('should respond to 404 error with GET request unknown route', (done) => {
     request(origin)
       .get('/doesnotexist')
       .end((err, req) => {
         expect(err).to.eql(null);
         expect(res).to.have.status(404);
         expect(res.body.msg).to.eql('Page not found');
+        debugger;
         done();
       });
   });
@@ -22,7 +23,7 @@ describe('REST functionality', function () {
   it('should GET', (done) => {
     request(origin)
       .get('/test')
-      .end(('err, res') => {
+      .end((err, res) => {
         expect(err).to.eql(null);
         expect(res.body.msg).to.eql('get test');
         done();
@@ -69,7 +70,7 @@ describe('server test', () => {
   });
 });
 
-describe('reading fileTypes', () => {
+describe('reading content-Type', () => {
   it('should match specified extension', () => {
     expect(contentHead('/index.html')).to.eql({'Content-Type': 'text/html'});
     expect(contentHead('/index.js')).to.eql({'Content-Type': 'application/json'});
