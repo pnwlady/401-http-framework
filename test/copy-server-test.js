@@ -2,7 +2,7 @@ var chai = require('chai');
 var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect;
-var server = require(__dirname + '/../examples/example-server.js');
+var server = require(__dirname + '/test/test-server.js');
 
 describe('stc server', function() {
 

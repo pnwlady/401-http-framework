@@ -1,30 +1,15 @@
-const expect = require('chai').expect;
-const request = require('chai-http').request;
-const fs = require('fs');
-var Router = require(__dirname _ '/../lib/router');
-
+var chai = require('chai');
+var chaihttp = require('chai-http');
+chai.use(chaihttp);
+var expect = chai.expect;
+var server = require(__dirname + '/../lib/router');
+// const contentHead = require(__dirname + '/../lib/content-type');
 
 var origin = 'localhost:3000'
-//is this necessary? 
-const contentHead = require(__dirname + '/../lib/content-type');
-
-// import mocha from 'mocha';
-//     mocha.describe();
-import { expect } from 'chai';
-
-// import chai from 'chai';
-//   chai.expect();
-
-import chai-http from 'chai-http';
-    chai-http.request();
-
-chai.use(chaiHttp);
-const expect = chai.expect;
-const request = chai.request;
 
 describe('REST functionality', function () {
   it('should respond to 404 error with GET request unknown route', (done) => {
-    chai(origin)
+    chai.request(origin)
       .get('/doesnotexist')
       .end((err, req) => {
         expect(err).to.eql(null);
@@ -35,7 +20,7 @@ describe('REST functionality', function () {
   });
 
   it('should GET', (done) => {
-    chai(origin)
+    chai.request(origin)
       .get('/test')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -45,7 +30,7 @@ describe('REST functionality', function () {
   });
 
   it('should POST', (done) => {
-    chai(origin)
+    chai.request(origin)
       .post('/test')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -63,7 +48,7 @@ describe('server test', () => {
 
   //write get and post tests with correct exportObj.data function from fileTypes
   it('should GET and read files with exportObj.view function', (done) => {
-    chai(origin)
+    chai.request(origin)
       .get('/filePath')
       .end((err, res) => {
         expect(err).to.eql(null);
@@ -73,7 +58,7 @@ describe('server test', () => {
   });
 
   it('should POST request data with exportObj.data function', (done) => {
-    chai(origin)
+    chai.request(origin)
       .post('/')
       .send('we are data')
       .end((err, res) => {
