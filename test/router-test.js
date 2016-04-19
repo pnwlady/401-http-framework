@@ -1,5 +1,4 @@
 var chai = require('chai');
-var fs = require('fs');
 var expect = chai.expect;
 var Router = require(__dirname + '/../lib/router');
 
@@ -27,8 +26,8 @@ describe('testing routes', () => {
       done();
     });
     Router.route(
-      {'method': 'GET', 'url': '/test'},
-      {'writeHead': (status) => {
+      { 'method': 'GET', 'url': '/test' },
+      { 'writeHead': (status) => {
         expect(status).to.eql(200);
         this.counter++;
       },
@@ -49,8 +48,8 @@ describe('testing routes', () => {
       done();
     });
     Router.route(
-      {'method': 'POST', 'url': '/test'},
-      {'writeHead': (status) => {
+      { 'method': 'POST', 'url': '/test' },
+      { 'writeHead': (status) => {
         expect(status).to.eql(200);
         this.counter++;
       },
