@@ -1,6 +1,6 @@
 {
   "name": "waka-flocka-frame",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a fast http framework",
   "main": "index.js",
   "directories": {
