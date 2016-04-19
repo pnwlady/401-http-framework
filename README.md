@@ -70,6 +70,8 @@ wff.router.getStatic('[your file path]', '[your route]');
 ```
 Parameters are a path to a resource and a route.
 
+NOTE:<i>You may get an error if you add a leading '/' to your file path statement.</i>
+
 <h2>Code to quickly set up a POST route without a callback.</h2>
 ```
 wff.router.post('/myBlog');
