@@ -1,7 +1,7 @@
 {
-  "name": "401-http-framework",
-  "version": "1.0.0",
-  "description": "401 assignment for creating a http server framework",
+  "name": "waka-flocka-frame",
+  "version": "1.0.3",
+  "description": "a fast http framework",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -22,7 +22,11 @@
     "patch",
     "router"
   ],
-  "author": "Heidi Laursen, Tim Forman & Ali Forman",
+  "author": "Heidi Laursen",
+  "contributors": [
+    "Tim Forman",
+    "Ali Forman"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pnwlady/401-http-framework/issues"
