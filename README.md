@@ -17,6 +17,7 @@ A simple http framework to take mundane out of the mundane. Quickly create a bas
 </ul>
 
 <h2>Installation</h2>
+NOTE: This app requires your computer to have Node js v4.x.x installed. 
 ---------------------
 <h2>Initialize your local repository</h2>
   ```
